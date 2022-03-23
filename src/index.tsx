@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { useInitial, ComponentPreviews } from './dev';
 import { DevSupport } from '@react-buddy/ide-toolbox';
+import {NativeBaseProvider} from "native-base";
 
 ReactDOM.render(
   <React.StrictMode>
-    <DevSupport
-      ComponentPreviews={ComponentPreviews}
-      useInitialHook={useInitial}
-    >
-      <App />
-    </DevSupport>
+      <NativeBaseProvider>
+          <DevSupport
+              ComponentPreviews={ComponentPreviews}
+              useInitialHook={useInitial}
+          >
+              <App />
+          </DevSupport>
+      </NativeBaseProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
